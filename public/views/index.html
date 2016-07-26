@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="fullStackApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Full Stack Challenge</title>
+    <script src="vendors/angular/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="MainController as main">
+    <h1>Make a Grocery List</h1>
+      Grocery<input type="text" ng-model="main.grocery.name" />
+      Quantity<input type="number" ng-model="main.grocery.qty" />
+      <button ng-click="main.addItem(main.grocery)">Submit</button>
+      <h2>Grocery Items</h2>
+      <ol>
+        <li ng-repeat="grocery in main.groceryList">
+          Item: {{grocery.name}} Quantity: {{grocery.qty}} <br />
+          Grocery<input type="text" ng-model="main.grocery.name"/>
+          Quantity<input type="number" ng-model="main.grocery.qty" />
+          <button ng-click="main.updateItem(grocery)">Update</button>
+          <button ng-click"main.removeItem(grocery)">Remove</button>
+        </li>
+      </ol>
+
+  </body>
+</html>
